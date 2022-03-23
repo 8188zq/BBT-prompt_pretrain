@@ -69,7 +69,7 @@ class BasicDataset:
         self.labellist = labellist
         self.tmp_labellist = copy.deepcopy(labellist)
         self.has_test = False
-        self.max_input_len = 512 - len('，'.join(labellist))
+        self.max_input_len = 511 - len('，'.join(labellist))
 
     def convert_examples(self, example):
         input_ids = tokenizer.encode(self.input_template(example))[:-1][:self.max_input_len]
